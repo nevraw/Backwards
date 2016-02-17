@@ -34,11 +34,21 @@ $("input[name=seconds]").change(function () {
 });
 
 function loadOptions() {
+ if (localStorage.invert) {
+  $invertValue = localStorage.invert;
+  console.log('localStorage.invert: ' + $invertValue);
+ } else {
+  $invertValue = 0;
+  console.log('localStorage.invert was undefined, now set to: ' + $invertValue);
+ }
+ $("input[name=invert][value='" + $invertValue + "']").attr('checked', 'checked');
+} 
+
  if (localStorage.seconds) {
   $secondsValue = localStorage.seconds;
   console.log('localStorage.seconds: ' + $secondsValue);
  } else {
-  $secondsValue = 0;
+  $secondsValue = 1;
   console.log('localStorage.seconds was undefined, now set to: ' + $secondsValue);
  }
  $("input[name=seconds][value='" + $secondsValue + "']").attr('checked', 'checked');
