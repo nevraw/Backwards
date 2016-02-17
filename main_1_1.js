@@ -42,7 +42,6 @@ function loadOptions() {
   console.log('localStorage.invert was undefined, now set to: ' + $invertValue);
  }
  $("input[name=invert][value='" + $invertValue + "']").attr('checked', 'checked');
-} 
 
  if (localStorage.seconds) {
   $secondsValue = localStorage.seconds;
