@@ -36,10 +36,10 @@ $("input[name=seconds]").change(function () {
 function loadOptions() {
  if (localStorage.seconds) {
   $secondsValue = localStorage.seconds;
-//  console.log('localStorage.seconds: ' + $secondsValue);
+  console.log('localStorage.seconds: ' + $secondsValue);
  } else {
   $secondsValue = 0;
-//  console.log('localStorage.seconds was undefined, now set to: ' + $secondsValue);
+  console.log('localStorage.seconds was undefined, now set to: ' + $secondsValue);
  }
  $("input[name=seconds][value='" + $secondsValue + "']").attr('checked', 'checked');
 } 
@@ -49,7 +49,7 @@ function getAndStoreConfigData() {
   invert:   $invertValue,
   seconds:  $secondsValue
  };
-// console.log('Got options: ' + JSON.stringify(options));
+ console.log('Got options: ' + JSON.stringify(options));
 
  localStorage.invert = $invertValue;
  localStorage.seconds = $secondsValue;
